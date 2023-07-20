@@ -9,7 +9,12 @@ app.use(cors());
 
 
 const port = 5004;
-mongoose.connect(process.env.DB)
+const connectMongo = async (params) => {
+    await mongoose.connect(process.env.DB);
+  };
+  connectMongo()
+  
+
 
 
 app.use("/card" , require("./routes/cardRoutes"));
