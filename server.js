@@ -9,8 +9,7 @@ app.use(cors());
 
 
 const port = 5004;
-
-mongoose.connect("mongodb://localhost:27017/weatherDB")
+mongoose.connect(process.env.DB)
 
 
 app.use("/card" , require("./routes/cardRoutes"));
